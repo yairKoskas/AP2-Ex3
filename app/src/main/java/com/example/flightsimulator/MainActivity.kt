@@ -24,5 +24,11 @@ class MainActivity : AppCompatActivity() {
         }
         val ip = ipText.text.toString()
         val port = portText.text.toString().toInt()
+        val viewModel : ViewModel = ViewModel(ip, port)
+        val m : Model = Model(viewModel)
+        var t1 : Thread = thread {
+            m.connect()
+
+        }
     }
 }

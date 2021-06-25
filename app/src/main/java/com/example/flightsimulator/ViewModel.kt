@@ -1,23 +1,33 @@
 package com.example.flightsimulator
 
-import androidx.databinding.Bindable
+class ViewModel(private var IP: String = "127.0.0.1", private var Port: Int = 0) {
 
-class ViewModel() {
-    private var Port: Int = 0
-    private lateinit var IP: String
+    private var aileron: Float = 0F
+    private var elevator : Float = 0F
+    private var throttle : Float = 0F
+    private var rudder : Float = 0F
 
-    constructor(ip: String, port: Int) {
-        this.IP = ip
-        this.Port = port
-    }
-
-    @Bindable
     fun getIP(): String {
         return this.IP
     }
 
-    @Bindable
     fun getPort(): Int {
         return this.Port
+    }
+
+    fun getAileron(): Float {
+        return this.aileron
+    }
+
+    fun getElevator(): Float {
+        return this.elevator
+    }
+
+    fun getThrottle(): Float {
+        return this.throttle
+    }
+
+    fun getRudder(): Float {
+        return this.rudder
     }
 }
