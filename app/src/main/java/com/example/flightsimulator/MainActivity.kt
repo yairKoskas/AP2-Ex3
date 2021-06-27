@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity(), View.OnTouchListener{
         viewModel= ViewModel()
         var model=Model(viewModel)
         viewModel.setModel(model)
-        val binding:ActivityMainBinding=DataBindingUtil.setContentView(this,R.layout.activity_main)
+        var binding:ActivityMainBinding=DataBindingUtil.setContentView(this,R.layout.activity_main)
         binding.viewModel=viewModel
         val sb1:SeekBar=findViewById(R.id.throttle)
         val sb2:SeekBar=findViewById(R.id.rudder)
@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity(), View.OnTouchListener{
             return
         }
         viewModel.ip = ipText.text.toString()
-        viewModel.port = portText.text.toString().toInt()
+        viewModel.port = portText.text.toString()
         var t1 : Thread = thread {
             viewModel.connect()
         }

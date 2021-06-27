@@ -3,7 +3,7 @@ package com.example.flightsimulator
 class ViewModel() {
 
     var ip="127.0.0.1"
-    var port=0
+    var port="0"
     private var _elevator =0f
     private var _aileron =0f
     var elevator: Float

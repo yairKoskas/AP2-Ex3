@@ -10,22 +10,32 @@ class Model(private var viewModel: ViewModel) {
     fun connect() {
         connected=true
         val ip:String = viewModel.ip
-        val port:Int = viewModel.port
-        sock = Socket(ip,port)
+        val port:String = viewModel.port
+        sock = Socket(ip,port.toInt())
     }
 
     fun onPropertyChanged() {
-        if(!connected){
-            return
+        var t1 : Thread = Thread {
+            if (connected) {
+                val writer: OutputStream = sock.getOutputStream()
+                writer.write(
+                    ("set /controls/flight/aileron " + viewModel.aileron
+                        .toString() + "\r\n").toByteArray(Charset.defaultCharset())
+                )
+                writer.write(
+                    ("set /controls/flight/elevator " + viewModel.elevator
+                        .toString() + "\r\n").toByteArray(Charset.defaultCharset())
+                )
+                writer.write(
+                    ("set /controls/flight/rudder " + viewModel.getRudder()
+                        .toString() + "\r\n").toByteArray(Charset.defaultCharset())
+                )
+                writer.write(
+                    ("set /controls/engines/current-engine/throttle " + viewModel.getThrottle()
+                        .toString() + "\r\n").toByteArray(Charset.defaultCharset())
+                )
+            }
         }
-        val writer: OutputStream = sock.getOutputStream()
-        writer.write(("set /controls/flight/aileron " + viewModel.elevator
-            .toString()+"\r\n").toByteArray(Charset.defaultCharset()))
-        writer.write(("set /controls/flight/elevator " + viewModel.elevator
-            .toString()+"\r\n").toByteArray(Charset.defaultCharset()))
-        writer.write(("set /controls/flight/rudder " + viewModel.getRudder()
-            .toString()+"\r\n").toByteArray(Charset.defaultCharset()))
-        writer.write(("set /controls/engines/current-engine/throttle "+viewModel.getThrottle()
-            .toString()+"\r\n").toByteArray(Charset.defaultCharset()))
+        t1.start()
     }
 }

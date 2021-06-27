@@ -75,13 +75,13 @@ class Joystick : View,View.OnTouchListener {
         var dy=height/2-y
         var distance=Math.sqrt((dx*dx+dy*dy).toDouble())
         if(distance>baseRadius){
-            dx= (dx*baseRadius/distance).toFloat()
-            dy= (dy*baseRadius/distance).toFloat()
+            dx = (dx*baseRadius/distance).toFloat()
+            dy = (dy*baseRadius/distance).toFloat()
             centerX=width/2-dx
             centerY=height/2-dy
         }
-        viewModel.elevator= dy/baseRadius
-        viewModel.aileron= -dx/baseRadius
+        viewModel.elevator = dy/baseRadius
+        viewModel.aileron = +dx/baseRadius
         postInvalidate()
     }
     private fun init(attrs: AttributeSet?, defStyle: Int) {
