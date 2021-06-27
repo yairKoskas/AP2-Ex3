@@ -16,20 +16,12 @@ class Joystick : View,View.OnTouchListener {
     private var centerY =0f
     private var baseRadius =0f
     private var joystickRadius =0f
-    private var _elevator =0f
-    private var _aileron =0f
+    private lateinit var viewModel: ViewModel
 
-    var elevator: Float
-        get() =  _elevator
-        set(value) {
-            _elevator= value
-        }
-    var aileron: Float
-        get() = _aileron
-        set(value) {
-            _aileron= value
-        }
 
+    fun setViewModel(vm:ViewModel){
+        viewModel=vm
+    }
 
     constructor(context: Context) : super(context) {
         init(null, 0)
@@ -88,8 +80,8 @@ class Joystick : View,View.OnTouchListener {
             centerX=width/2-dx
             centerY=height/2-dy
         }
-        elevator= dy/baseRadius
-        aileron= -dx/baseRadius
+        viewModel.elevator= dy/baseRadius
+        viewModel.aileron= -dx/baseRadius
         postInvalidate()
     }
     private fun init(attrs: AttributeSet?, defStyle: Int) {

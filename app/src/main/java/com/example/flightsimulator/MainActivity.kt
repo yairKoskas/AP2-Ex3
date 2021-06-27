@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity(), View.OnTouchListener{
         sb1.max=1000
         sb2.max=1000
         joystick=findViewById(R.id.joystick)
+        joystick.setViewModel(viewModel)
         joystick.setOnTouchListener(this)
     }
     override fun onTouch(v: View, event: MotionEvent): Boolean {
@@ -36,13 +37,13 @@ class MainActivity : AppCompatActivity(), View.OnTouchListener{
     public fun onConnect(view: View) {
         val ipText: EditText = findViewById(R.id.editTextIP)
         val portText: EditText = findViewById(R.id.editTextPort)
-        val ipRegex: String = "^(?:[0-9]{1,3}\\.){3}[0-9]{1,3}\$"
+        val ipRegex= "^(?:[0-9]{1,3}\\.){3}[0-9]{1,3}\$"
         if (!ipText.text.matches(ipRegex.toRegex())) {
             Toast.makeText(applicationContext, "IP address invalid!", Toast.LENGTH_SHORT).show()
             return
         }
-        val ip = ipText.text.toString()
-        val port = portText.text.toString().toInt()
+        viewModel.ip = ipText.text.toString()
+        viewModel.port = portText.text.toString().toInt()
         var t1 : Thread = thread {
             viewModel.connect()
         }
