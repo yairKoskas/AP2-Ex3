@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 include ':app'
 rootProject.name = "FlightSimulator"
+=======
+rootProject.name = "Test"
+include ':app'
+>>>>>>> 59069e2416d8e0b3a37297cfa8ec714f0eaf7745

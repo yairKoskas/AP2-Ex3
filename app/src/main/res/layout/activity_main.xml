@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <data>
 
+=======
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+>>>>>>> 59069e2416d8e0b3a37297cfa8ec714f0eaf7745
         <variable
             name="viewModel"
             type="com.example.flightsimulator.ViewModel" />
     </data>
 
+<<<<<<< HEAD
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -62,3 +70,69 @@
             tools:layout_editor_absoluteY="270dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
+=======
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editTextIP"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:hint="IP"
+            android:inputType="textPersonName"
+            android:text="@{viewModel.IP}" />
+
+        <EditText
+            android:id="@+id/editTextPort"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="center_horizontal"
+            android:hint="Port"
+            android:inputType="numberPassword"
+            android:text="@{viewModel.port}" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onConnect"
+            android:text="Connect" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8">
+
+            <com.example.flightsimulator.Joystick
+                android:id="@+id/joystick"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.example.flightsimulator.VerticalSeekbar
+                android:id="@+id/throttle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:progress="@={viewModel.modifiedThrottle}"
+                >
+
+            </com.example.flightsimulator.VerticalSeekbar>
+
+        </RelativeLayout>
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rudder"
+            android:progress="@={viewModel.modifiedRudder}"
+            ></SeekBar>
+    </LinearLayout>
+</layout>
+
+>>>>>>> 59069e2416d8e0b3a37297cfa8ec714f0eaf7745

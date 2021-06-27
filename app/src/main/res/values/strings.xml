@@ -1,6 +1,10 @@
 <resources>
+<<<<<<< HEAD
     <string name="app_name">FlightSimulator</string>
     <string name="IP">IP</string>
     <string name="Port">Port</string>
     <string name="Connect">Connect</string>
+=======
+    <string name="app_name">Test</string>
+>>>>>>> 59069e2416d8e0b3a37297cfa8ec714f0eaf7745
 </resources>

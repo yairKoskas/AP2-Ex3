@@ -9,8 +9,13 @@ class Model(private var viewModel: ViewModel) {
     private lateinit var sock: Socket
 
     fun connect() {
+<<<<<<< HEAD
         val ip:String = viewModel.getIP()
         val port:Int = viewModel.getPort()
+=======
+        val ip:String = viewModel.ip
+        val port:Int = viewModel.port
+>>>>>>> 59069e2416d8e0b3a37297cfa8ec714f0eaf7745
         sock = Socket(ip,port)
     }
 

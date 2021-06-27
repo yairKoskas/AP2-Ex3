@@ -1,6 +1,10 @@
 <resources>
 
+<<<<<<< HEAD
     <style name="Widget.Theme.FlightSimulator.MyView" parent="">
+=======
+    <style name="Widget.Theme.Test.MyView" parent="">
+>>>>>>> 59069e2416d8e0b3a37297cfa8ec714f0eaf7745
         <item name="android:background">@color/gray_600</item>
         <item name="exampleColor">@color/light_blue_600</item>
     </style>

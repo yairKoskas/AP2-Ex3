@@ -50,7 +50,11 @@ class Joystick : View,View.OnTouchListener {
     override fun onSizeChanged(width: Int, height: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(width, height, oldw, oldh)
         baseRadius = Math.min(width, height) / 4f
+<<<<<<< HEAD
         joystickRadius = Math.min(width, height) / 5f
+=======
+        joystickRadius = Math.min(width, height) / 7f
+>>>>>>> 59069e2416d8e0b3a37297cfa8ec714f0eaf7745
         centerX=width/2f
         centerY=height/2f
     }
@@ -90,7 +94,11 @@ class Joystick : View,View.OnTouchListener {
         }
         elevator= dy/baseRadius
         aileron= -dx/baseRadius
+<<<<<<< HEAD
         invalidate()
+=======
+        postInvalidate()
+>>>>>>> 59069e2416d8e0b3a37297cfa8ec714f0eaf7745
     }
     private fun init(attrs: AttributeSet?, defStyle: Int) {
 
