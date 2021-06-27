@@ -7,15 +7,22 @@ import android.view.View
 import android.widget.EditText
 import android.widget.SeekBar
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
+import com.example.flightsimulator.databinding.ActivityMainBinding
 import kotlin.concurrent.thread
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnTouchListener{
     lateinit var joystick:Joystick
-
+    lateinit var viewModel:ViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        viewModel= ViewModel()
+        var model=Model(viewModel)
+        viewModel.setModel(model)
+        val binding:ActivityMainBinding=DataBindingUtil.setContentView(this,R.layout.activity_main)
+        binding.viewModel=viewModel
         val sb1:SeekBar=findViewById(R.id.throttle)
         val sb2:SeekBar=findViewById(R.id.rudder)
         sb1.max=1000
@@ -37,8 +44,7 @@ class MainActivity : AppCompatActivity(), View.OnTouchListener{
         val ip = ipText.text.toString()
         val port = portText.text.toString().toInt()
         var t1 : Thread = thread {
-            m.connect()
-
+            viewModel.connect()
         }
     }
 }

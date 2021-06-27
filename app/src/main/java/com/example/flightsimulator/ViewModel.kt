@@ -1,6 +1,6 @@
 package com.example.flightsimulator
 
-class ViewModel(private var view:MainActivity,private var model:Model) {
+class ViewModel() {
 
     var ip="127.0.0.1"
     var port=0
@@ -8,7 +8,10 @@ class ViewModel(private var view:MainActivity,private var model:Model) {
     private var elevator : Float = 0F
     var modifiedThrottle=0
     var modifiedRudder=0
-
+    private lateinit var model:Model
+    fun setModel(model:Model){
+        this.model=model
+    }
     fun connect(){
         model.connect()
     }

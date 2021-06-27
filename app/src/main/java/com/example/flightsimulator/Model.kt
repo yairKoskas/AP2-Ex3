@@ -2,7 +2,6 @@ package com.example.flightsimulator
 
 import java.io.OutputStream
 import java.net.Socket
-import java.net.SocketAddress
 import java.nio.charset.Charset
 
 class Model(private var viewModel: ViewModel) {
