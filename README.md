@@ -15,8 +15,8 @@ Install android studio and our project
 #### Running
 Run the android studio project
 ## Design
-You can see here our [UML diagram](https://online.visual-paradigm.com/app/diagrams/#G1ybPkRMBE0tr0iAb0gHeeCH25_nix_0HF)
+You can see here our [UML diagram](https://drive.google.com/file/d/1VMHOJzMSWNsew2Zeh27grhn_yXgXsL9h/view?usp=sharing)
 
 ## Video
-[video](https://drive.google.com/file/d/1VMHOJzMSWNsew2Zeh27grhn_yXgXsL9h/view?usp=sharing)
+[video](https://drive.google.com/file/d/1K_EZlwbKlabBbZEMl-ZhlyLQ4weyPzSa/view?usp=sharing)
 
