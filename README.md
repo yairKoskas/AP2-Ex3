@@ -18,5 +18,5 @@ Run the android studio project
 You can see here our [UML diagram](https://drive.google.com/file/d/1VMHOJzMSWNsew2Zeh27grhn_yXgXsL9h/view?usp=sharing)
 
 ## Video
-[video](https://drive.google.com/file/d/1K_EZlwbKlabBbZEMl-ZhlyLQ4weyPzSa/view?usp=sharing)
+[video](https://drive.google.com/file/d/1K_EZlwbKlabBbZEMl-ZhlyLQ4weyPzSa/view)
 
